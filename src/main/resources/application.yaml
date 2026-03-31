@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: biblioteca
+  security:
+    user:
+      name: admin
+      password: minuevaClave#26875
+
+
+function:
+  azure:
+    url:
+      base: https://fn-biblioteca-dpasa4bnfwhuc3d6.eastus-01.azurewebsites.net/api/
