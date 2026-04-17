@@ -10,7 +10,7 @@ spring:
 function:
   azure:
     url:
-      base: https://fn-biblioteca-dpasa4bnfwhuc3d6.eastus-01.azurewebsites.net/api/
+      base:  https://func-biblioteca-djfmfvaacbfvdcfe.eastus2-01.azurewebsites.net/api/
 server:
   port: 8080
 

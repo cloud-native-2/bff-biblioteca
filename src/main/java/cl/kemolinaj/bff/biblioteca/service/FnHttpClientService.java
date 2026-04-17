@@ -28,7 +28,7 @@ public class FnHttpClientService {
         WebClient webClient = webClientBuilder.build();
         return webClient
                 .get()
-                .uri(URL_BASE_FN.concat("ListarLibros"))
+                .uri(URL_BASE_FN.concat("libros"))
                 .retrieve()
                 .bodyToMono(new ParameterizedTypeReference<>() {});
     }
@@ -37,7 +37,7 @@ public class FnHttpClientService {
         WebClient webClient = webClientBuilder.build();
         return webClient
                 .post()
-                .uri(URL_BASE_FN.concat("CrearLibro"))
+                .uri(URL_BASE_FN.concat("libros"))
                 .body(Mono.just(rqDto), LibrosRqDto.class)
                 .retrieve()
                 .bodyToMono(new ParameterizedTypeReference<>() {});
@@ -47,7 +47,7 @@ public class FnHttpClientService {
         WebClient webClient = webClientBuilder.build();
         return webClient
                 .get()
-                .uri(URL_BASE_FN.concat("ListarUsuario"))
+                .uri(URL_BASE_FN.concat("usuarios"))
                 .retrieve()
                 .bodyToMono(new ParameterizedTypeReference<>() {});
     }
@@ -56,7 +56,7 @@ public class FnHttpClientService {
         WebClient webClient = webClientBuilder.build();
         return webClient
                 .post()
-                .uri(URL_BASE_FN.concat("CrearUsuario"))
+                .uri(URL_BASE_FN.concat("usuarios"))
                 .body(Mono.just(rqDto), LibrosRqDto.class)
                 .retrieve()
                 .bodyToMono(new ParameterizedTypeReference<>() {});
@@ -66,7 +66,7 @@ public class FnHttpClientService {
         WebClient webClient = webClientBuilder.build();
         return webClient
                 .get()
-                .uri(URL_BASE_FN.concat("ListarPrestamos"))
+                .uri(URL_BASE_FN.concat("prestamos"))
                 .retrieve()
                 .bodyToMono(new ParameterizedTypeReference<>() {});
     }
@@ -75,7 +75,7 @@ public class FnHttpClientService {
         WebClient webClient = webClientBuilder.build();
         return webClient
                 .post()
-                .uri(URL_BASE_FN.concat("CrearPrestamo"))
+                .uri(URL_BASE_FN.concat("prestamos"))
                 .body(Mono.just(rqDto), LibrosRqDto.class)
                 .retrieve()
                 .bodyToMono(new ParameterizedTypeReference<>() {});
