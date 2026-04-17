@@ -1,5 +1,6 @@
 package cl.kemolinaj.bff.biblioteca.service;
 
+import cl.kemolinaj.bff.biblioteca.dtos.graphql.GraphQlRqDto;
 import cl.kemolinaj.bff.biblioteca.dtos.libros.LibrosRqDto;
 import cl.kemolinaj.bff.biblioteca.dtos.libros.LibrosRsDto;
 import cl.kemolinaj.bff.biblioteca.dtos.prestamos.PrestamoRqDto;
@@ -13,6 +14,7 @@ import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
 
 import java.util.List;
+import java.util.Objects;
 
 @Service( "fnHttpClientService")
 @RequiredArgsConstructor
@@ -75,6 +77,26 @@ public class FnHttpClientService {
                 .post()
                 .uri(URL_BASE_FN.concat("CrearPrestamo"))
                 .body(Mono.just(rqDto), LibrosRqDto.class)
+                .retrieve()
+                .bodyToMono(new ParameterizedTypeReference<>() {});
+    }
+
+    public Mono<Object> graphPrestamos(GraphQlRqDto rqDto) {
+        WebClient webClient = webClientBuilder.build();
+        return webClient
+                .post()
+                .uri(URL_BASE_FN.concat("graphqlPretamos"))
+                .body(Mono.just(rqDto), GraphQlRqDto.class)
+                .retrieve()
+                .bodyToMono(new ParameterizedTypeReference<>() {});
+    }
+
+    public Mono<Object> graphLibros(GraphQlRqDto rqDto) {
+        WebClient webClient = webClientBuilder.build();
+        return webClient
+                .post()
+                .uri(URL_BASE_FN.concat("graphqlLibros"))
+                .body(Mono.just(rqDto), GraphQlRqDto.class)
                 .retrieve()
                 .bodyToMono(new ParameterizedTypeReference<>() {});
     }
