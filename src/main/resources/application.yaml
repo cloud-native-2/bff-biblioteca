@@ -13,3 +13,7 @@ function:
       base: https://fn-biblioteca-dpasa4bnfwhuc3d6.eastus-01.azurewebsites.net/api/
 server:
   port: 8080
+
+#logging:
+#  level:
+#    root: DEBUG
