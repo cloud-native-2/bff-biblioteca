@@ -41,7 +41,7 @@ public class ApiController {
 
     @PostMapping("/usuarios")
     public ResponseEntity<String> ingresarUsuario(@RequestBody UsuarioDto usuario) {
-        return ResponseEntity.ok(fnService.ingresarUsuario(usuario).block());
+        return ResponseEntity.ok(fnService.ingresarUsuario(usuario));
     }
 
     // Préstamos

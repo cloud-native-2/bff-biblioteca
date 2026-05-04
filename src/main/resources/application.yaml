@@ -11,6 +11,16 @@ function:
   azure:
     url:
       base:  https://func-biblioteca-djfmfvaacbfvdcfe.eastus2-01.azurewebsites.net/api/
+
+event:
+  grid:
+    topic-endpoint: https://event-biblioteca.eastus-1.eventgrid.azure.net/api/events
+    key: El4Zp7GXv5O6jjJeOuxdmHZquYE7O2SRLLlhOCMdqt0xSENpkCb6JQQJ99CEACYeBjFXJ3w3AAABAZEGZMcA
+    tipo:
+      evento:
+        envio-correo: Envio.Correo
+        generar-comprobante: Generar.Comprobante
+
 server:
   port: 8080
 
