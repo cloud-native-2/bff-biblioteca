@@ -15,7 +15,7 @@ function:
 event:
   grid:
     topic-endpoint: https://event-biblioteca.eastus-1.eventgrid.azure.net/api/events
-    key: El4Zp7GXv5O6jjJeOuxdmHZquYE7O2SRLLlhOCMdqt0xSENpkCb6JQQJ99CEACYeBjFXJ3w3AAABAZEGZMcA
+    key: ${EVENT_GRID_KEY}
     tipo:
       evento:
         envio-correo: Envio.Correo
